@@ -8,9 +8,9 @@
 
 ## Transformation
 The feature `x` is transformed to `z` using:
-r = 102317254
-ar = 0.5 * (r % 7)
-br = 0.3 * (r % 5 + 1)
+-r = 102317254
+-ar = 0.5 * (r % 7) =  2.0
+-br = 0.3 * (r % 5 + 1) = 1.5
 
 ---
 
@@ -53,10 +53,11 @@ After training the GAN:
 - Generated samples closely match the real data distribution.
 - KDE and histogram plots show good overlap.
 
+<img width="1062" height="678" alt="image" src="https://github.com/user-attachments/assets/50c8c5a0-fa59-4184-aaaa-7039d5b47955" />
 
-![alt text](image.png)
 
 ---
 
 ## Conclusion
 The GAN successfully learns the unknown probability density function of the transformed variable using data only, without assuming any parametric form.
+
