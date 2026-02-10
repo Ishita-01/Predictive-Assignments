@@ -1,35 +1,70 @@
 # Learning PDF Using GAN
 
-## Dataset
-- India Air Quality Dataset (Kaggle)
-- Feature used: NO₂ concentration (`x`)
+## Methodology
+**Pipeline**: Data Collection → Data Pre-processing → Non-Linear Transformation → GAN Training → Sample Generation → PDF Approximation → Result Analysis
+
+This assignment focuses on learning an unknown probability density function directly from data samples using Generative Adversarial Networks without assuming any parametric form.
 
 ---
 
-## Transformation
-The feature `x` is transformed to `z` using:
-- r = 102317254
-- ar = 0.5 * (r % 7) =  2.0
-- br = 0.3 * (r % 5 + 1) = 1.5
+## Dataset
+- India Air Quality Dataset (Kaggle)
+- Dataset Link: https://www.kaggle.com/datasets/shrutibhargava94/india-air-quality-data
+- Feature used: NO₂ concentration (`x`)
 
+---
+## Objective
+The objective of this assignment is to learn an unknown probability density function of a transformed random variable using only data samples. No analytical or parametric form of the probability density function is assumed. A Generative Adversarial Network (GAN) is used to implicitly learn the distribution directly from the data.
+
+---
+
+## Mathematical Formulation
+# Non-Linear Transformation
+Each NO₂ value x is transformed into z using the roll-number-parameterized non-linear function:
+```
+z = x + aᵣ sin(bᵣ x)
+```
+where:
+
+- aᵣ = 0.5 × (r mod 7)
+- bᵣ = 0.3 × (r mod 5 + 1)
+- r is the university roll number
+
+# Transformation Parameters
+For the given university roll number:
+
+- r = 102317254
+- aᵣ = 0.5 × (r mod 7) = 0.5 × (102317254 mod 7) = 0.5 × 4 = 2.0
+- bᵣ = 0.3 × ((r mod 5) + 1) = 0.3 × ((102317254 mod 5) + 1) = 0.3 × (4 + 1) = 1.5
+
+In the code, these are represented as:
+
+- **ar = 2.0**
+- **br = 1.5**
 ---
 
 ## GAN Architecture
 
 ### Generator
 - Input: Gaussian noise N(0,1)
-- Layers: 1 → 64 → 128 → 1
+- Layers: 1 → 32 → 32 → 1
 - Activations: ReLU
 
 ### Discriminator
 - Input: Sample (real or fake)
-- Layers: 1 → 128 → 64 → 1
+- Layers: 1 → 32 → 32 → 1
 - Activations: LeakyReLU, Sigmoid
 
 Training uses Binary Cross Entropy loss and Adam optimizer.
 
 ---
+## . Training Details
+- Optimizer: Adam optimizer for both networks ($lr = 0.0002$)
+- Loss Function: Binary 
+- Cross Entropy Loss (BCELoss)
+- Epochs: 5,000.Batch Size: 128.
 
+---
 ## PDF Estimation
 After training the GAN:
 - Samples are generated from the Generator
@@ -60,5 +95,6 @@ After training the GAN:
 
 ## Conclusion
 The GAN successfully learns the unknown probability density function of the transformed variable using data only, without assuming any parametric form.
+
 
 
