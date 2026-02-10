@@ -8,9 +8,9 @@
 
 ## Transformation
 The feature `x` is transformed to `z` using:
--r = 102317254
--ar = 0.5 * (r % 7) =  2.0
--br = 0.3 * (r % 5 + 1) = 1.5
+- r = 102317254
+- ar = 0.5 * (r % 7) =  2.0
+- br = 0.3 * (r % 5 + 1) = 1.5
 
 ---
 
@@ -60,4 +60,5 @@ After training the GAN:
 
 ## Conclusion
 The GAN successfully learns the unknown probability density function of the transformed variable using data only, without assuming any parametric form.
+
 
