@@ -41,21 +41,5 @@ I generated a dataset of **1,000 simulations**. For each simulation run:
 ## Step 6: ML Model Comparison & Results
 I evaluated 5 different Machine Learning models to see which could best map the relationship between arrival/service rates and the resulting wait times.
 
-### Comparison Table
-| Model | Mean Absolute Error (MAE) | R² Score |
-| :--- | :--- | :--- |
-| **Random Forest Regressor** | *[Insert Result from Code]* | *[Insert Result from Code]* |
-| **Gradient Boosting Regressor** | *[Insert Result from Code]* | *[Insert Result from Code]* |
-| **K-Nearest Neighbors** | *[Insert Result from Code]* | *[Insert Result from Code]* |
-| **Decision Tree Regressor** | *[Insert Result from Code]* | *[Insert Result from Code]* |
-| **Linear Regression** | *[Insert Result from Code]* | *[Insert Result from Code]* |
-
-### Final Report
-The **[Insert Best Model]** achieved the highest accuracy. In queuing theory, wait times often increase exponentially as the system reaches capacity, making non-linear models like Random Forest or Gradient Boosting more effective than standard Linear Regression for this dataset.
-
----
-
-## How to Reproduce
-1.  Open the `Solution.ipynb` notebook in **Google Colab**.
-2.  Run the first cell to install the `simpy` library.
-3.  Execute all cells to regenerate the 1,000 simulations and view the model performance table.
+### Result Table
+<img width="1004" height="238" alt="image" src="https://github.com/user-attachments/assets/3a5f5e09-ee80-4e8f-87b8-e6c138cc6d0a" />
